@@ -481,6 +481,12 @@
     flex-shrink:0;
   }
 
+  /* Paso 4: el frasco queda un poco a la izquierda en la foto. Se desplaza el
+     punto de vista del recorte hacia la izquierda para centrarlo en el cuadro. */
+  .step-img.step-4{
+    object-position:42% 50%;
+  }
+
   .step-content h4{font-size:1.12rem;margin-bottom:0.35rem;color:var(--texto);}
   .step-content p{font-size:0.95rem;color:var(--texto-suave);}
 
