@@ -1,0 +1,7 @@
+# Archivos locales / temporales
+.DS_Store
+Thumbs.db
+
+# Backup del HTML original (no se sube al repo de Pages)
+# mr-bulgarito-original.html se guarda en ../backup/
+*.original.html
