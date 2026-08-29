@@ -19,6 +19,10 @@
       <img src="img/logo.jpg" alt="Logo Mr. Bulgarito">
       Mr. Bulgarito
     </div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-burger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </label>
     <ul>
       <li><a href="#que-es">¿Qué es?</a></li>
       <li><a href="#beneficios">Beneficios</a></li>
@@ -333,5 +337,13 @@
   <p class="copy">© 2026 Mr. Bulgarito — Nódulos de Kéfir de Leche Artesanales. Todos los derechos reservados.</p>
 </footer>
 
+<script>
+  // Cierra el menu hamburguesa al tocar un link
+  document.querySelectorAll('nav ul a').forEach(function(link){
+    link.addEventListener('click', function(){
+      document.getElementById('nav-toggle').checked = false;
+    });
+  });
+</script>
 </body>
 </html>
