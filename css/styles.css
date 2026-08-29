@@ -342,7 +342,7 @@
   /* BENEFICIOS */
   .beneficios-grid{
     display:grid;
-    grid-template-columns:repeat(4, 1fr);
+    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
     gap:1.8rem;
   }
 
@@ -372,9 +372,12 @@
     margin-bottom:1.1rem;
   }
 
-  .beneficio-card:nth-child(2) .icono{background:#FBE8DC;}
-  .beneficio-card:nth-child(3) .icono{background:#E7F1DD;}
-  .beneficio-card:nth-child(4) .icono{background:#EAE3F5;}
+  .beneficio-card:nth-child(7n+2) .icono{background:#FBE8DC;}
+  .beneficio-card:nth-child(7n+3) .icono{background:#E7F1DD;}
+  .beneficio-card:nth-child(7n+4) .icono{background:#EAE3F5;}
+  .beneficio-card:nth-child(7n+5) .icono{background:#FDE4E1;}
+  .beneficio-card:nth-child(7n+6) .icono{background:#FFF3CE;}
+  .beneficio-card:nth-child(7n) .icono{background:#DCEFEC;}
 
   .beneficio-card h3{font-size:1.1rem;margin-bottom:0.5rem;color:var(--texto);}
   .beneficio-card p{font-size:0.95rem;color:var(--texto-suave);}
@@ -419,6 +422,194 @@
 
   .cuidado-item h4{font-size:1rem;margin-bottom:0.25rem;}
   .cuidado-item p{font-size:0.92rem;color:var(--texto-suave);}
+
+  /* PORCIÓN RECOMENDADA */
+  .porcion-card{
+    background:linear-gradient(135deg, var(--verde) 0%, #6BB6B5 100%);
+    color:var(--blanco);
+    border-radius:32px;
+    padding:3rem;
+    text-align:center;
+    max-width:700px;
+    margin:0 auto;
+    box-shadow:0 15px 40px -18px rgba(84,107,57,0.45);
+  }
+
+  .porcion-card h3{
+    color:var(--blanco);
+    font-size:1.5rem;
+    margin:0.5rem 0 1.5rem;
+  }
+
+  .porcion-numero{
+    background:var(--blanco);
+    color:var(--texto);
+    font-family:'Baloo 2', sans-serif;
+    font-weight:800;
+    font-size:2.6rem;
+    padding:1.3rem;
+    border-radius:20px;
+    margin-bottom:1.3rem;
+  }
+
+  .porcion-numero span{
+    display:block;
+    font-family:'Quicksand', sans-serif;
+    font-weight:600;
+    font-size:1rem;
+    color:var(--texto-suave);
+    margin-top:0.2rem;
+  }
+
+  .porcion-detalle{
+    font-size:1rem;
+    opacity:0.95;
+    margin-top:0.4rem;
+  }
+
+  /* PRECAUCIONES */
+  .precauciones-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.8rem;
+  }
+
+  .precaucion-col{
+    border-radius:24px;
+    padding:2rem 2.2rem;
+  }
+
+  .precaucion-si{
+    background:#EDF5E6;
+    border:2px solid #C9E4B5;
+  }
+
+  .precaucion-no{
+    background:#FCEBEA;
+    border:2px solid #F3C6C2;
+  }
+
+  .precaucion-col h3{
+    font-size:1.2rem;
+    margin-bottom:1rem;
+  }
+
+  .precaucion-si h3{color:var(--verde-oscuro);}
+  .precaucion-no h3{color:#B84A42;}
+
+  .precaucion-col ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:0.8rem;
+  }
+
+  .precaucion-col li{
+    font-size:0.96rem;
+    color:var(--texto);
+    padding-left:1.4rem;
+    position:relative;
+  }
+
+  .precaucion-si li::before{
+    content:'✓';
+    position:absolute;
+    left:0;
+    color:var(--verde-oscuro);
+    font-weight:700;
+  }
+
+  .precaucion-no li::before{
+    content:'✕';
+    position:absolute;
+    left:0;
+    color:#B84A42;
+    font-weight:700;
+  }
+
+  @media (max-width:700px){
+    .precauciones-grid{grid-template-columns:1fr;}
+  }
+
+  /* FREEZER */
+  .freezer-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.8rem;
+  }
+
+  .freezer-col{
+    background:var(--blanco);
+    border-radius:26px;
+    padding:2.2rem;
+    box-shadow:0 8px 24px -14px rgba(51,48,43,0.15);
+    border-top:4px solid var(--lila);
+  }
+
+  .freezer-icono{
+    font-size:2.4rem;
+    margin-bottom:0.8rem;
+  }
+
+  .freezer-col h3{
+    font-size:1.2rem;
+    color:var(--texto);
+    margin-bottom:1rem;
+  }
+
+  .freezer-col ol{
+    padding-left:1.2rem;
+    display:flex;
+    flex-direction:column;
+    gap:0.6rem;
+  }
+
+  .freezer-col li{
+    font-size:0.96rem;
+    color:var(--texto-suave);
+  }
+
+  @media (max-width:700px){
+    .freezer-grid{grid-template-columns:1fr;}
+  }
+
+  /* MASCOTAS */
+  .mascotas-card{
+    background:var(--blanco);
+    border-radius:32px;
+    padding:3.5rem;
+    text-align:center;
+    max-width:750px;
+    margin:0 auto;
+    box-shadow:0 10px 40px -20px rgba(124,107,168,0.25);
+  }
+
+  .mascotas-iconos{
+    font-size:3rem;
+    margin-bottom:0.5rem;
+  }
+
+  .mascotas-card h2{
+    margin:0.6rem 0 1.2rem;
+  }
+
+  .mascotas-respuesta{
+    font-size:1.08rem;
+    color:var(--texto-suave);
+    max-width:520px;
+    margin:0 auto;
+  }
+
+  .mascotas-alerta{
+    background:#FFF3D6;
+    border:2px solid #F3D28A;
+    border-radius:18px;
+    padding:1.3rem 1.6rem;
+    margin-top:1.8rem;
+    font-size:0.95rem;
+    color:#7A5C1E;
+    text-align:left;
+  }
 
   /* PROCESO - timeline */
   .proceso-timeline{
