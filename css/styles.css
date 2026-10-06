@@ -940,8 +940,42 @@
     margin-top:1.1rem !important;
   }
 
+  .yuyo-pasos{
+    max-width:520px;
+    margin:2rem auto;
+    text-align:left;
+  }
+
+  .yuyo-pasos h3{
+    text-align:center;
+    margin:0 0 1.5rem;
+  }
+
+  .yuyo-pasos .step{
+    margin-bottom:1.1rem;
+    grid-template-columns:44px 1fr;
+    gap:1rem;
+  }
+
+  .yuyo-pasos .step:last-child{margin-bottom:0;}
+
+  .yuyo-pasos .step-numero{
+    width:44px;
+    height:44px;
+    font-size:1.05rem;
+  }
+
+  .yuyo-pasos .step h4{margin:0 0 .25rem;}
+
+  .yuyo-pasos .step p{
+    font-size:.95rem;
+    margin:0;
+    line-height:1.6;
+  }
+
   @media (max-width:640px){
     .yuyo-card{padding:2.4rem 1.4rem;border-radius:26px;}
     .yuyo-chips{gap:0.45rem;margin:1.4rem 0 1.6rem;}
     .yuyo-chips span{font-size:0.82rem;padding:0.4rem 0.9rem;}
+    .yuyo-pasos{margin:1.6rem auto;}
   }
