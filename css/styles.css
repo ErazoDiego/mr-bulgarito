@@ -310,8 +310,42 @@
     font-size:1.05rem;
   }
 
-  /* QUE ES */
-  #que-es{
+  /* LÍNEAS DE CULTIVOS */
+  .lineas-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1.8rem;
+  }
+
+  .linea-card,
+  .producto-card{
+    background:var(--blanco);
+    border-radius:28px;
+    padding:2.3rem;
+    box-shadow:0 10px 28px -18px rgba(51,48,43,0.22);
+  }
+
+  .linea-card{border-top:5px solid var(--lila);}
+  .linea-agua{border-top-color:#6BB6B5;}
+  .linea-icono,.producto-icono{font-size:2.7rem;margin-bottom:0.8rem;}
+  .linea-tipo{color:var(--verde-oscuro);font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;}
+  .linea-card h3,.producto-card h3{font-size:1.45rem;margin:0.25rem 0 0.65rem;}
+  .linea-card p,.producto-card p{color:var(--texto-suave);margin-bottom:1.3rem;}
+  .linea-card a{color:var(--lila-oscuro);font-weight:700;text-decoration:none;}
+  .linea-card a:hover{text-decoration:underline;}
+
+  /* PRODUCTOS */
+  #productos{padding-top:1rem;}
+  .productos-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1.5rem;
+  }
+  .producto-card{text-align:center;background:linear-gradient(180deg, var(--blanco) 0%, var(--crema-2) 100%);}
+  .producto-card span{display:inline-block;background:var(--lila-suave);color:var(--lila-oscuro);font-size:0.82rem;font-weight:700;padding:0.35rem 0.75rem;border-radius:50px;}
+
+  /* KÉFIR DE LECHE */
+  #kefir-leche{
     background:var(--blanco);
     border-radius:32px;
     padding:3.5rem;
@@ -334,8 +368,8 @@
     justify-content:center;
   }
 
-  #que-es h2{text-align:left;}
-  #que-es h2::after{display:none;}
+  #kefir-leche h2{text-align:left;}
+  #kefir-leche h2::after{display:none;}
 
   .que-es-text .eyebrow{display:block;}
 
@@ -458,6 +492,12 @@
     padding:1.3rem;
     border-radius:20px;
     margin-bottom:1.3rem;
+  }
+
+  .porcion-numero strong{
+    font:inherit;
+    color:var(--verde-oscuro);
+    letter-spacing:0.03em;
   }
 
   .porcion-numero span{
@@ -820,12 +860,12 @@
     .hero p.lead{margin-left:auto;margin-right:auto;}
     .hero-cta{justify-content:center;}
     .hero-visual{margin-top:1rem;}
-    #que-es{grid-template-columns:1fr;}
-    #que-es h2{text-align:center;}
-    #que-es h2::after{display:block;margin:0.5rem auto;}
-    .beneficios-grid{grid-template-columns:repeat(2,1fr);}
-    .cuidados-lista{grid-template-columns:repeat(2,1fr);}
-    .consumo-grid{grid-template-columns:repeat(3,1fr);}
+     #kefir-leche{grid-template-columns:1fr;}
+     #kefir-leche h2{text-align:center;}
+     #kefir-leche h2::after{display:block;margin:0.5rem auto;}
+     .beneficios-grid{grid-template-columns:repeat(2,1fr);}
+     .cuidados-lista{grid-template-columns:repeat(2,1fr);}
+     .consumo-grid{grid-template-columns:repeat(3,1fr);}
   }
 
   @media (max-width: 640px){
@@ -883,15 +923,17 @@
     nav ul a:hover{background:var(--lila-suave);}
 
     h2{font-size:1.7rem;}
-    #que-es, #cuidados, #faq{padding:2rem 1.4rem;}
+     #kefir-leche, #cuidados, #faq{padding:2rem 1.4rem;}
+     .lineas-grid{grid-template-columns:1fr;}
+     .productos-grid{grid-template-columns:1fr;}
     .beneficios-grid{grid-template-columns:1fr;}
     .cuidados-lista{grid-template-columns:1fr;}
     .consumo-grid{grid-template-columns:repeat(2,1fr);}
     .step{grid-template-columns:44px 1fr;}
-    .step-numero{width:44px;height:44px;font-size:1.05rem;}
+     .step-numero{width:44px;height:44px;font-size:1.05rem;}
   }
 
-  /* ===== Recetario Yuyo (cross-promo hacia la app) ===== */
+  /* RECETARIO YUYO */
   .yuyo-card{
     background:linear-gradient(135deg,var(--lila-suave) 0%,var(--crema-2) 60%,var(--durazno) 100%);
     border-radius:32px;
@@ -903,75 +945,19 @@
   }
 
   .yuyo-card h2{margin:0.6rem 0 1rem;}
-
-  .yuyo-card p{
-    color:var(--texto-suave);
-    max-width:600px;
-    margin:0 auto;
-    line-height:1.7;
-  }
-
-  .yuyo-chips{
-    display:flex;
-    flex-wrap:wrap;
-    gap:0.6rem;
-    justify-content:center;
-    margin:1.8rem 0 2rem;
-  }
-
-  .yuyo-chips span{
-    background:var(--blanco);
-    color:var(--lila-oscuro);
-    border-radius:50px;
-    padding:0.45rem 1.1rem;
-    font-size:0.9rem;
-    font-weight:700;
-    font-family:'Baloo 2', sans-serif;
-    box-shadow:0 4px 12px -8px rgba(124,107,168,0.6);
-  }
-
+  .yuyo-card p{color:var(--texto-suave);max-width:600px;margin:0 auto;line-height:1.7;}
+  .yuyo-chips{display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center;margin:1.8rem 0 2rem;}
+  .yuyo-chips span{background:var(--blanco);color:var(--lila-oscuro);border-radius:50px;padding:0.45rem 1.1rem;font-size:0.9rem;font-weight:700;font-family:'Baloo 2', sans-serif;box-shadow:0 4px 12px -8px rgba(124,107,168,0.6);}
   .yuyo-btn{background:var(--verde);}
-
   .yuyo-btn:hover{transform:translateY(-2px);}
-
-  .yuyo-nota{
-    font-size:0.88rem;
-    color:var(--texto-suave);
-    margin-top:1.1rem !important;
-  }
-
-  .yuyo-pasos{
-    max-width:520px;
-    margin:2rem auto;
-    text-align:left;
-  }
-
-  .yuyo-pasos h3{
-    text-align:center;
-    margin:0 0 1.5rem;
-  }
-
-  .yuyo-pasos .step{
-    margin-bottom:1.1rem;
-    grid-template-columns:44px 1fr;
-    gap:1rem;
-  }
-
+  .yuyo-nota{font-size:0.88rem;color:var(--texto-suave);margin-top:1.1rem !important;}
+  .yuyo-pasos{max-width:520px;margin:2rem auto;text-align:left;}
+  .yuyo-pasos h3{text-align:center;margin:0 0 1.5rem;}
+  .yuyo-pasos .step{margin-bottom:1.1rem;grid-template-columns:44px 1fr;gap:1rem;}
   .yuyo-pasos .step:last-child{margin-bottom:0;}
-
-  .yuyo-pasos .step-numero{
-    width:44px;
-    height:44px;
-    font-size:1.05rem;
-  }
-
+  .yuyo-pasos .step-numero{width:44px;height:44px;font-size:1.05rem;}
   .yuyo-pasos .step h4{margin:0 0 .25rem;}
-
-  .yuyo-pasos .step p{
-    font-size:.95rem;
-    margin:0;
-    line-height:1.6;
-  }
+  .yuyo-pasos .step p{font-size:.95rem;margin:0;line-height:1.6;}
 
   @media (max-width:640px){
     .yuyo-card{padding:2.4rem 1.4rem;border-radius:26px;}
