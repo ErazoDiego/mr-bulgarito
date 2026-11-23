@@ -958,10 +958,15 @@
   .yuyo-pasos .step-numero{width:44px;height:44px;font-size:1.05rem;}
   .yuyo-pasos .step h4{margin:0 0 .25rem;}
   .yuyo-pasos .step p{font-size:.95rem;margin:0;line-height:1.6;}
+  .yuyo-step-shot-link{display:block;flex-shrink:0;line-height:0;}
+  .yuyo-step-shot{width:112px;height:230px;object-fit:contain;display:block;border-radius:12px;border:2px solid var(--lila);background:var(--blanco);box-shadow:0 6px 16px -10px rgba(51,48,43,0.45);transition:transform .2s ease,box-shadow .2s ease;}
+  .yuyo-step-shot-link:hover .yuyo-step-shot{transform:scale(1.04);box-shadow:0 10px 20px -10px rgba(84,107,57,0.45);}
 
   @media (max-width:640px){
     .yuyo-card{padding:2.4rem 1.4rem;border-radius:26px;}
     .yuyo-chips{gap:0.45rem;margin:1.4rem 0 1.6rem;}
     .yuyo-chips span{font-size:0.82rem;padding:0.4rem 0.9rem;}
     .yuyo-pasos{margin:1.6rem auto;}
+    .yuyo-pasos .step-content{align-items:center;}
+    .yuyo-step-shot{width:150px;height:280px;}
   }
